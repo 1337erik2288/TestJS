@@ -63,8 +63,8 @@
       // Рисуем звезду
       ctx.beginPath();
       ctx.moveTo(centerX, centerY - size / 2);
-      for (let i = 1; i <= 10; i++) {
-        const angle = i * Math.PI / 5;
+      for (let i = 1; i <= 12; i++) {
+        const angle = i * Math.PI / 6 - 3 * Math.PI / 6;
         const radius = i % 2 === 0 ? size / 2 : size / 4;
         ctx.lineTo(centerX + radius * Math.cos(angle), centerY + radius * Math.sin(angle));
       }
@@ -75,9 +75,9 @@
       ctx.stroke();
 
       // Вычисляем и выводим площади фигур
-      const hexagonArea = (3 * Math.sqrt(3) / 2 * hexagonSide ** 2).toFixed(2);
       const starArea = (5 / 4 * size ** 2 * Math.tan(Math.PI / 10)).toFixed(2);
-      document.getElementById('hexagonArea').textContent = `Площадь шестиугольника: ${hexagonArea}`;
+      const hexagonArea = (3 * Math.sqrt(3) / 2 * hexagonSide ** 2).toFixed(2) - starArea;
+      document.getElementById('hexagonArea').textContent = `Площадь красной зоны: ${hexagonArea}`;
       document.getElementById('starArea').textContent = `Площадь звезды: ${starArea}`;
     }
 
