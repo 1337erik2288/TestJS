@@ -40,7 +40,12 @@
     const sizeInput = document.getElementById('size');
 
     function drawShapes() {
-      const size = parseInt(sizeInput.value);
+      let size = parseInt(sizeInput.value);
+      // Проверка на отрицательные числа и некорректные символы
+      if (isNaN(size) || size <= 0) {
+        alert("Пожалуйста, введите корректное положительное число для размера фигур.");
+        return; // Прекратить выполнение функции
+      }
       const hexagonSide = size / 2 / Math.cos(Math.PI / 6);
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
