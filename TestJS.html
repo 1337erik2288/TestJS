@@ -70,7 +70,6 @@
 
       // Рисуем звезду
       ctx.beginPath();
-      ctx.moveTo(centerX, centerY - size / 2);
       for (let i = 1; i <= 12; i++) {
         const angle = i * Math.PI / 6 - 3 * Math.PI / 6;
         const radius = i % 2 === 0 ? size / 2 : size / (2 * 1.732);
